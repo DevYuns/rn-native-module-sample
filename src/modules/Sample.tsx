@@ -11,7 +11,7 @@ class SampleModule {
   };
 
   getCurrentTimeEvents = (callback: Dispatch<SetStateAction<number>>): void => {
-    const clockEvents = new NativeEventEmitter(NativeModules.Clock);
+    const clockEvents = new NativeEventEmitter(NativeModules.Sample);
 
     clockEvents.addListener('onTimeUpdated', (time: {count: number}) => {
       callback(time.count);
