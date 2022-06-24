@@ -15,6 +15,10 @@ class SampleNativeComponentViewManager: SimpleViewManager<SampleNativeComponent>
        return SampleNativeComponent(reactContext)
     }
 
+    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any>? {
+        return MapBuilder.of("onUpdate", MapBuilder.of("registrationName", "onUpdate"))
+    }
+
     @ReactProp(name = "myColor")
     fun setMyColor(view: SampleNativeComponent, myColor: String) {
         val hexColor = if(myColor == "red") "#FF0000" else "#0000FF"

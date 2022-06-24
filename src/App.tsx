@@ -1,5 +1,5 @@
+import {NativeSyntheticEvent, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
 
 import Sample from './modules/Sample';
 import SampleComponent from './components/SampleNativeComp';
@@ -7,6 +7,13 @@ import SampleComponent from './components/SampleNativeComp';
 const App = () => {
   const [date, setDate] = useState('');
   const [seconds, setSeconds] = useState(0);
+  const [color, setColor] = useState('red');
+
+  const onUpdate = (e: NativeSyntheticEvent<{isPressed: boolean}>) => {
+    if (e.nativeEvent.isPressed) {
+      setColor(color === 'red' ? 'blue' : 'red');
+    }
+  };
 
   useEffect(() => {
     Sample.getCurrentTime().then((time: string) => {
@@ -22,7 +29,11 @@ const App = () => {
       <Text>Sample Native module</Text>
       <Text>{date}</Text>
       <Text>The Seconds count is: {seconds}</Text>
-      <SampleComponent myColor="red" style={{height: 75, width: 500}} />
+      <SampleComponent
+        myColor={color}
+        style={{height: 75, width: 500}}
+        onUpdate={onUpdate}
+      />
     </View>
   );
 };
