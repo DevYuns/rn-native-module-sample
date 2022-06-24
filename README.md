@@ -20,3 +20,10 @@
 ### Event Handler
 
 You can pass the data by emitting the event with `RCTDeviceEventEmitter`.
+
+### UI Component
+
+1. Create a Component class which extends `Layout` like class. This class will initiate layout like `R.layout.your_view`.
+2. Create a ViewManager class which will handle instance, props and comp name etc..
+3. Create a Package class which extends `ReactPackage`. It will expose your native ui component.
+4. Get native component with `requireNativeComponent` in Js/Ts side.

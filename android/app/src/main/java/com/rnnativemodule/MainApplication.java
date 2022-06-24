@@ -10,6 +10,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 import com.rnnativemodule.newarchitecture.MainApplicationReactNativeHost;
+import com.rnnativemodule.samplecomponent.SampleNativeComponentPackage;
 import com.rnnativemodule.samplenativemodule.SampleModulePackage;
 
 import java.lang.reflect.InvocationTargetException;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           packages.add(new SampleModulePackage());
+          packages.add(new SampleNativeComponentPackage());
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;

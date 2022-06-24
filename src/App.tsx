@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 import Sample from './modules/Sample';
+import SampleComponent from './components/SampleNativeComp';
 
 const App = () => {
   const [date, setDate] = useState('');
@@ -21,6 +22,7 @@ const App = () => {
       <Text>Sample Native module</Text>
       <Text>{date}</Text>
       <Text>The Seconds count is: {seconds}</Text>
+      <SampleComponent myColor="red" style={{height: 75, width: 500}} />
     </View>
   );
 };
