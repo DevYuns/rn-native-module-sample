@@ -15,7 +15,7 @@ class SampleNativeComponentViewManager: SimpleViewManager<SampleNativeComponent>
        return SampleNativeComponent(reactContext)
     }
 
-    override fun getExportedCustomBubblingEventTypeConstants(): MutableMap<String, Any>? {
+    override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any>? {
         return MapBuilder.of("onUpdate", MapBuilder.of("registrationName", "onUpdate"))
     }
 
